@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Next Generation Team</title>
+  <style>
+    /* Set the background color of the header and footer */
+header, footer {
+  background-color: #000000c8;
+  color: #848396;
+}
+
+header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 510px;
+  margin-right: 20px;
+}
+
+header 
+
+.team-name {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.team-member h3 {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #848396;
+}
+
+/* Set the background animation */
+body {
+    
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjttbBMg4eWlPHogZpg5g3ohOi7ixdKtpGm38KW9dIQ81_5CaT1EdHkQ-xrwsd40LbSkvhfkkHYCJUm0bMyx26sBEVXOWwzjNx0Me0GGnkeknnH2mWubHLG2kt5qPZpDhdhyXOqxng8sLXy5Y2HmexbXnqm9MWrXzpv4A3iY4HtCLg3KohyBIAxHQQPrX0/s500/Error404%20(2).png");
+  background-size: cover;
+  animation: ai-background-animation 10s infinite;
+  border: 50px solid transparent;
+  margin: 0;
+}
+
+@keyframes ai-background-animation {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 100% 0%;
+  }
+}
+
+/* Align the team members next to each other */
+.team-members {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 400px;
+}
+
+/* Make the team members profile mode */
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-direction: column;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+//Media queries
+/* All media queries */
+@media all, (max-width: 768px), (min-width: 769px) and (max-width: 1024px), (min-width: 1025px) {
+  /* CSS for all devices */
+
+  /* Small screen devices ( mobile phones) */
+  @media (max-width: 768px) {
+
+    .team-member h3 {
+    font-size: 500px;
+  }
+
+  .team-member img {
+    width: 175px;
+    height: 175px;
+  }
+    
+  }
+
+  /* Medium screen devices ( tablets) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .team-member img {
+      width: 200px;
+      height: 00px;
+    }
+  }
+}
+/* All media queries */
+@media all, (max-width: 768px), (min-width: 769px) and (max-width: 1024px), (min-width: 1025px) {
+  /* CSS for all devices */
+
+  /* Small screen devices (e.g. mobile phones) */
+  @media (max-width: 768px) {
+    .team-members {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* Medium screen devices (e.g. tablets) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    header h1{
+        font-size: 80px;
+    }
+    header img{
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .team-members {
+      display: flex;
+      flex-direction: column;
+      margin-top: 600px;
+    }
+    .team-member h3 {
+    font-size: 50px;
+  }
+
+  .team-member img {
+    width: 300px;
+    height: 300px;
+  }
+  footer p{
+    font-size: 40px;
+  }
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/images/Error404 (2)-modified.png" alt="Logo">
+    <h1 class="team-name">Next Generation Team</h1>
+  </header>
+
+  <div class="team-members">
+
+    <div class="team-member">
+        <img src="/images/Mariam.jpg" alt="Mary Jane Watson">
+        <h3>Mariam Alamir</h3>
+      </div>
+  
+      <div class="team-member">
+        <img src="/images/Roaa.jpg" alt="Bruce Wayne">
+        <h3>Roaa Mansour</h3>
+      </div>
+    
+    <div class="team-member">
+        <img src="/images/Osama.png" alt="John Doe">
+        <h3>Osama Ramadan</h3>
+      </div>
+
+    
+    <div class="team-member">
+        <img src="/images/Mohamed Mahmoud-min-fotor-20231113122035.jpg" alt="Jane Doe">
+        <h3>Mohamed Mahmoud</h3>
+      </div>
+  
+      <div class="team-member">
+        <img src="/images/Ahmed.jpg" alt="Peter Parker">
+        <h3>Ahmed Khaled</h3>
+      </div>
+
+  </div>
+
+  <footer>
+    <p>Copyright &copy; 2023 Next Generation Team</p>
+  </footer>
+</body>
+</html>

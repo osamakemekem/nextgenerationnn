@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Next Generation Team</title>
-  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFfRC2AOzyrRsjkYHdeN0cR9_X3QrpPh7usGOGxqMciawH6J-nMpJAqCjuXOuc4_fnEE6QW432Gglxx5MG8-0Q4Fkm6IGNqF6EyNmBge7hmFO1PAUuFPj2Wzx7zylh-tm0rt4ufoLBsBFmZ0WnHcTr5Gnh52Scn6Yx1e1HAPxxL42BGFuw5Rinzd-FBGI/s320/Error404%20(2)-modified.png">
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-D0dJpkpCl5SwVopl9FYYl_-KK-aK98x5pg2nh7ikn4qnWGAcQE4IEhsf2KMRmnTA-fFJQWlXVOUGQFJhdb9EdVhCIsmPbgPh4UHlUZWZrsqVCe1hiBtsfbD5WWK_Z_o3DnvZpLMruSS92DcpF65xNHi5MedHHX41Qm5BOCok0cNHW4-CYk6Z7-89Kzc/s320/Blue%20Flat%20Illustrative%20Brain%20Artificial%20Intelligence%20Technology%20Logo-fotor-20231119173425.png">
+
   <style>
     /* Set the background color of the header and footer */
 header, footer {
@@ -10,17 +11,28 @@ header, footer {
   color: #848396;
 }
 
-header img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 510px;
-  margin-right: 20px;
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
-header 
+header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+header h1{
+  margin: 20px 20px 20px 0px;
+}
 
 .team-name {
   margin-top: 10px;
@@ -37,7 +49,7 @@ header
 /* Set the background animation */
 body {
     
-  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjttbBMg4eWlPHogZpg5g3ohOi7ixdKtpGm38KW9dIQ81_5CaT1EdHkQ-xrwsd40LbSkvhfkkHYCJUm0bMyx26sBEVXOWwzjNx0Me0GGnkeknnH2mWubHLG2kt5qPZpDhdhyXOqxng8sLXy5Y2HmexbXnqm9MWrXzpv4A3iY4HtCLg3KohyBIAxHQQPrX0/s500/Error404%20(2).png");
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_W4DtDMM1FxpHa4_lp6E1DJrYF2xjeZdQbIEarFJt7BwfS0E0dlr9_t_ruKlX7P1F73v3_2msJKJ0BaF0Sl4Krl2z7tpDqLmeANAx2NB3zdL2zUztqIRqocUVChUxKNxBVl9E7wpna6Qj_gr6194CKgstqcuZB6dw3AH3B5nFq6YFgm__qDLDexjjtVQ/s320/Blue%20Flat%20Illustrative%20Brain%20Artificial%20Intelligence%20Technology%20Logo.png");
   background-size: cover;
   animation: ai-background-animation 10s infinite;
   border: 50px solid transparent;
@@ -57,8 +69,9 @@ body {
 /* Align the team members next to each other */
 .team-members {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 400px;
+  margin-top: 150px;
 }
 
 /* Make the team members profile mode */
@@ -67,6 +80,9 @@ body {
   align-items: center;
   margin-bottom: 50px;
   flex-direction: column;
+
+  width:250px; /* Adjust the width as needed */
+  text-align: center;
 }
 
 .team-member img {
@@ -75,13 +91,58 @@ body {
   border-radius: 50%;
 }
 
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+.inner {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    100px circle at 
+    var(--mouseX) var(--mouseY),
+    hsl(var(--primary)/0.3),
+    transparent 50%
+  );
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0;
 }
+
+/* .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bootom: -10px;
+  left:30px;
+  width: 10px;
+  rotate: 35deg;
+  background-color: #fff;
+}
+
+.btn:hover::befor{
+  left: calc(100% +30px);
+  transition: left 500ms;
+} */
+
+
+/* .btn:hover .inner{
+  opacity: 1;
+}
+
+.btn::before,
+.btn::after{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: inherit;
+  border-radius: inherit;
+  
+}
+.btn::before{
+  filter: blur(15px);
+} */
 
 footer {
   display: flex;
@@ -99,7 +160,7 @@ footer {
   /* CSS for all devices */
 
   /* Small screen devices ( mobile phones) */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
 
     .team-member h3 {
     font-size: 500px;
@@ -118,7 +179,7 @@ footer {
       width: 200px;
       height: 00px;
     }
-  }
+  } */
 }
 /* All media queries */
 @media all, (max-width: 768px), (min-width: 769px) and (max-width: 1024px), (min-width: 1025px) {
@@ -136,30 +197,40 @@ footer {
   @media (min-width: 769px) and (max-width: 1024px) {
     header {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     header h1{
         font-size: 80px;
     }
     header img{
-        width: 400px;
-        height: 400px;
+        width: 200px;
+        height: 200px;
         margin: auto;
-        margin-top: 20px;
+        margin-right: 15px;
+        margin-left: 15px;
     }
     
     .team-members {
       display: flex;
-      flex-direction: column;
-      margin-top: 600px;
+      flex-wrap: wrap;
+      margin-top: 250px;
+      margin-bottom: 20px;
     }
     .team-member h3 {
-    font-size: 50px;
+    font-size: 40px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 33px; /* Adjust the font size as needed */
   }
 
   .team-member img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
+    
+  }
+  .team-member{
+    margin: 50px;
   }
   footer p{
     font-size: 40px;
@@ -173,8 +244,11 @@ footer {
 </head>
 <body>
   <header>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFfRC2AOzyrRsjkYHdeN0cR9_X3QrpPh7usGOGxqMciawH6J-nMpJAqCjuXOuc4_fnEE6QW432Gglxx5MG8-0Q4Fkm6IGNqF6EyNmBge7hmFO1PAUuFPj2Wzx7zylh-tm0rt4ufoLBsBFmZ0WnHcTr5Gnh52Scn6Yx1e1HAPxxL42BGFuw5Rinzd-FBGI/s320/Error404%20(2)-modified.png" alt="Logo">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-D0dJpkpCl5SwVopl9FYYl_-KK-aK98x5pg2nh7ikn4qnWGAcQE4IEhsf2KMRmnTA-fFJQWlXVOUGQFJhdb9EdVhCIsmPbgPh4UHlUZWZrsqVCe1hiBtsfbD5WWK_Z_o3DnvZpLMruSS92DcpF65xNHi5MedHHX41Qm5BOCok0cNHW4-CYk6Z7-89Kzc/s320/Blue%20Flat%20Illustrative%20Brain%20Artificial%20Intelligence%20Technology%20Logo-fotor-20231119173425.png" alt="Logo">
     <h1 class="team-name">Next Generation Team</h1>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-D0dJpkpCl5SwVopl9FYYl_-KK-aK98x5pg2nh7ikn4qnWGAcQE4IEhsf2KMRmnTA-fFJQWlXVOUGQFJhdb9EdVhCIsmPbgPh4UHlUZWZrsqVCe1hiBtsfbD5WWK_Z_o3DnvZpLMruSS92DcpF65xNHi5MedHHX41Qm5BOCok0cNHW4-CYk6Z7-89Kzc/s320/Blue%20Flat%20Illustrative%20Brain%20Artificial%20Intelligence%20Technology%20Logo-fotor-20231119173425.png" alt="Logo">
+
+    
   </header>
 
   <div class="team-members">
@@ -204,11 +278,43 @@ footer {
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDMQMQWF0jqludFQlxLpq6pS1xQQrJBd3seYe9l2gQCNZ-h9ddWghIIMyhp4JOsSDDyCs-JM_T20k-FlINe-QAJ66HWfpafHu38-JTzmM5p-lKQeD-An8A9dlqgDNCin4IQ1CBDwQNcQNJz0TRVI4k2Zy704h5NyBELYFwoeRE8JPpbQif1Zd6d51aIu8/s320/Ahmed.jpg" alt="Peter Parker">
         <h3>Ahmed Khaled</h3>
       </div>
+      <div class="team-member">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOMKnU4fdodXt79kNTYd7m5xHCnRRlgK16gNDP1CfbELGU7tzz6W0oVNOyd3b23Xkyj8V1h6pAlbStdSsBQgUVrnrU2aFV87or7XsSIwBCLgXuG517wdpUpDm5mYPnEtzlE7s5lKmmEo1gsVvm6bBPQbtndqae61KvNHFDc_sweLPabJhOQIEed5_SC5Q/s1600/unknown.jpeg" alt="John Doe">
+        <h3>Rodaina Hisham</h3>
+      </div>
+
+    
+    <div class="team-member">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOMKnU4fdodXt79kNTYd7m5xHCnRRlgK16gNDP1CfbELGU7tzz6W0oVNOyd3b23Xkyj8V1h6pAlbStdSsBQgUVrnrU2aFV87or7XsSIwBCLgXuG517wdpUpDm5mYPnEtzlE7s5lKmmEo1gsVvm6bBPQbtndqae61KvNHFDc_sweLPabJhOQIEed5_SC5Q/s1600/unknown.jpeg" alt="Jane Doe">
+        <h3>Shahd Tag </h3>
+      </div>
+  
+      <div class="team-member">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOMKnU4fdodXt79kNTYd7m5xHCnRRlgK16gNDP1CfbELGU7tzz6W0oVNOyd3b23Xkyj8V1h6pAlbStdSsBQgUVrnrU2aFV87or7XsSIwBCLgXuG517wdpUpDm5mYPnEtzlE7s5lKmmEo1gsVvm6bBPQbtndqae61KvNHFDc_sweLPabJhOQIEed5_SC5Q/s1600/unknown.jpeg" alt="Peter Parker">
+        <h3>Shahd Faiz</h3>
+      </div>
 
   </div>
+
+  <!-- <button class="btn">
+    <div class="inner"></div>
+    <span>Contact Us</span>
+  </button> -->
 
   <footer>
     <p>Copyright &copy; 2023 Next Generation Team</p>
   </footer>
 </body>
+<script>
+  button.addEventListener("mousemove", (event) => {
+    const rect = button.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    button.style.setProperty("--mouseX" , `${x}px`);
+    button.style.setProperty("--mouseY", `${y}px`);
+  });
+
+</script>
 </html>

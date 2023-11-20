@@ -91,58 +91,100 @@ body {
   border-radius: 50%;
 }
 
-.inner {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    100px circle at 
-    var(--mouseX) var(--mouseY),
-    hsl(var(--primary)/0.3),
-    transparent 50%
-  );
-  border-radius: inherit;
-  z-index: 0;
-  opacity: 0;
-}
 
-/* .btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bootom: -10px;
-  left:30px;
-  width: 10px;
-  rotate: 35deg;
-  background-color: #fff;
-}
-
-.btn:hover::befor{
-  left: calc(100% +30px);
-  transition: left 500ms;
-} */
-
-
-/* .btn:hover .inner{
-  opacity: 1;
-}
-
-.btn::before,
-.btn::after{
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: inherit;
-  border-radius: inherit;
-  
-}
-.btn::before{
-  filter: blur(15px);
-} */
+.bttn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ :root {
+   --primary: 250 66% 61%;
+ }
+ .btn {
+   all: unset;
+   font-size: 24px;
+   padding: 14px 52px;
+   background: hsl(0, 0%, 0%);
+   color: white;
+   text-transform: uppercase;
+   position: relative;
+   border-radius: 100px;
+   cursor: pointer;
+ }
+ 
+ .btn > span {
+   font-family: "Roboto";
+   letter-spacing: 1px;
+   position: relative;
+   z-index: 10;
+   transition: 0.25s ease;
+ }
+ .btn:hover > span {
+   color: hsl(var(--primary) / 1);
+ }
+ 
+ @property --angle {
+   syntax: "<angle>";
+   initial-value: 0deg;
+   inherits: false;
+ }
+ 
+ .btn::before,
+ .btn::after {
+   content: "";
+   position: absolute;
+   inset: -2px;
+   background-color: inherit;
+   border-radius: inherit;
+   background-image: conic-gradient(
+     from var(--angle) at 50% 50%,
+     transparent 0%,
+     transparent 33%,
+     hsl(var(--primary)) 50%,
+     transparent 66%,
+     transparent 100%
+   );
+   animation: rotate 2s infinite linear;
+   z-index: -1;
+ }
+ 
+ .btn::before {
+   filter: blur(15px);
+ }
+ 
+ .inner {
+   position: absolute;
+   inset: 0;
+   background: radial-gradient(
+     100px circle at var(--mouseX) var(--mouseY),
+     hsl(var(--primary) / 0.3),
+     transparent 50%
+   );
+   border-radius: inherit;
+   z-index: 0;
+   opacity: 0;
+ }
+ .btn:hover .inner {
+   opacity: 1;
+ }
+ 
+ @keyframes rotate {
+   0% {
+     --angle: 0deg;
+   }
+   100% {
+     --angle: 360deg;
+   }
+ }
+ 
+ a {
+     color: blue; /* Default color */
+     text-decoration: none; /* Remove underline */
+   }
+ a:visited {
+     color: purple; /* Color for visited links */
+ }
 
 footer {
   display: flex;
@@ -213,8 +255,8 @@ footer {
     .team-members {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: calc((100% - 40%) / 2 );
+      margin-bottom: calc((100% - 80%) / 2 );
     }
     .team-member h3 {
     font-size: 40px;
@@ -230,7 +272,8 @@ footer {
     
   }
   .team-member{
-    margin: 50px;
+    width: 46%; /* Two team members side by side with a small gap */
+      margin: 2%;
   }
   footer p{
     font-size: 40px;
@@ -285,7 +328,7 @@ footer {
 
     
     <div class="team-member">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOMKnU4fdodXt79kNTYd7m5xHCnRRlgK16gNDP1CfbELGU7tzz6W0oVNOyd3b23Xkyj8V1h6pAlbStdSsBQgUVrnrU2aFV87or7XsSIwBCLgXuG517wdpUpDm5mYPnEtzlE7s5lKmmEo1gsVvm6bBPQbtndqae61KvNHFDc_sweLPabJhOQIEed5_SC5Q/s1600/unknown.jpeg" alt="Jane Doe">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi5fXGW6OAf_gw4qeeQqvYJvYQq2EJQwFJjgatGHrN35M7XIiUho5Y6bsrtdf1smvi5sbqxJ2glgXoOuwJdqUvG9IxW-1QUyoFiSMbfqWK3C42qNbMSVxskOoIGdCoDY87ihA0Ta9K74y3wfTdf2efVNG_XY_BxSFQW_ph_zjkKEwFRN4g44y-Mf6mCjJo" alt="Jane Doe">
         <h3>Shahd Tag </h3>
       </div>
   
@@ -294,26 +337,36 @@ footer {
         <h3>Shahd Faiz</h3>
       </div>
 
+      <div class="bttn">
+    <a href="https://t.me/NextGenerationTeam_Bot">
+      <button class="btn">
+        <div class="inner"></div>
+        <span>Contact Us</span>
+      </button>
+    </a>
+    </div>
+
   </div>
 
-  <!-- <button class="btn">
-    <div class="inner"></div>
-    <span>Contact Us</span>
-  </button> -->
+  
+
 
   <footer>
     <p>Copyright &copy; 2023 Next Generation Team</p>
   </footer>
 </body>
 <script>
-  button.addEventListener("mousemove", (event) => {
-    const rect = button.getBoundingClientRect();
+  const button = document.querySelector(".btn");
+  const inner = document.querySelector(".inner");
 
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+  button.addEventListener("mousemove", (e) => {
+  const rect = button.getBoundingClientRect();
 
-    button.style.setProperty("--mouseX" , `${x}px`);
-    button.style.setProperty("--mouseY", `${y}px`);
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  button.style.setProperty("--mouseX", `${x}px`);
+  button.style.setProperty("--mouseY", `${y}px`);
   });
 
 </script>
